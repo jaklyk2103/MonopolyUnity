@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,8 +148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2999864, y: -1.6000004}
-  m_SizeDelta: {x: 208.41, y: 59.3}
+  m_AnchoredPosition: {x: -1, y: -49}
+  m_SizeDelta: {x: 254, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134741170
 MonoBehaviour:
@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 0.39215687}
+    m_HighlightedColor: {r: 1, g: 0.30588236, b: 0.30588236, a: 0.19607843}
+    m_PressedColor: {r: 1, g: 0.30588236, b: 0.30588236, a: 0.39215687}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -562,8 +562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.3, y: -13}
-  m_SizeDelta: {x: 389.8, y: 295.3}
+  m_AnchoredPosition: {x: -11.2, y: 41.1}
+  m_SizeDelta: {x: 517.5, y: 403.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580891060
 MonoBehaviour:
@@ -1060,8 +1060,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.299989, y: -74.3}
-  m_SizeDelta: {x: 208.41, y: 59.3}
+  m_AnchoredPosition: {x: -1, y: -117}
+  m_SizeDelta: {x: 208.41, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &866436343
 MonoBehaviour:
@@ -1084,8 +1084,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 0.19607843}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 0.39215687}
+    m_HighlightedColor: {r: 1, g: 0.30588236, b: 0.30588236, a: 0.19607843}
+    m_PressedColor: {r: 1, g: 0.30588236, b: 0.30588236, a: 0.39215687}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1224,10 +1224,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
-    topRight: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
-    bottomLeft: {r: 0.8018868, g: 0.71488965, b: 0.71488965, a: 1}
-    bottomRight: {r: 0.8018868, g: 0.71488965, b: 0.71488965, a: 1}
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 0.38039216, b: 0.38039216, a: 1}
+    bottomRight: {r: 1, g: 0.38039216, b: 0.38039216, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1618,10 +1618,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
-    topRight: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
-    bottomLeft: {r: 0.8018868, g: 0.71488965, b: 0.71488965, a: 1}
-    bottomRight: {r: 0.8018868, g: 0.71488965, b: 0.71488965, a: 1}
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 0.38039216, b: 0.38039216, a: 1}
+    bottomRight: {r: 1, g: 0.38039216, b: 0.38039216, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -2155,10 +2155,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
-    topRight: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
-    bottomLeft: {r: 0.8018868, g: 0.71488965, b: 0.71488965, a: 1}
-    bottomRight: {r: 0.8018868, g: 0.71488965, b: 0.71488965, a: 1}
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 0.3820755, b: 0.3820755, a: 1}
+    bottomRight: {r: 1, g: 0.3820755, b: 0.3820755, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -2278,7 +2278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.299988, y: 194.9}
+  m_AnchoredPosition: {x: 2, y: 155}
   m_SizeDelta: {x: 410.7, y: 91.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800048285
@@ -2315,10 +2315,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 0, b: 0, a: 1}
-    topRight: {r: 1, g: 0.11183079, b: 0, a: 1}
-    bottomLeft: {r: 0.38679248, g: 0, b: 0, a: 1}
-    bottomRight: {r: 0.13207549, g: 0, b: 0, a: 1}
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 0.4292453, b: 0.49737382, a: 1}
+    bottomRight: {r: 1, g: 0, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -2440,8 +2440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2999907, y: 67.8}
-  m_SizeDelta: {x: 208.41, y: 59.3}
+  m_AnchoredPosition: {x: -1, y: 17}
+  m_SizeDelta: {x: 208.41, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920554212
 MonoBehaviour:
@@ -2464,8 +2464,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 0.20784314}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 0.39215687}
+    m_HighlightedColor: {r: 1, g: 0.3066038, b: 0.3066038, a: 0.19607843}
+    m_PressedColor: {r: 1, g: 0.30588236, b: 0.30588236, a: 0.39215687}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
