@@ -14,29 +14,38 @@ enum direction
 public class PawnMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public int diceOutput; //TODO: ma być czytane z kostki
-    public bool diceRolled; //TODO: dawane z góry pozwolenie na ruch
-
-    int fieldsMoved = 0;
+    
+    // TODO: variable destination
+    bool canMove = false;
+    bool destinationReached;
     float velocity = 300f;
     direction dir = direction.straight;
+
+    public void allowMovement()//TODO: add parameter destination
+    {
+        canMove = true;
+        destinationReached = false;
+    }
+
+    public bool DestinationReached()
+    {
+        return destinationReached;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        diceOutput = 4;
-        diceRolled = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        if (move())
+        if (Move())
         {
             Vector3 pos = transform.position;
 
-            if (pos.x >= 10 && dir == direction.straight)
+            //TODO: zamienić to na wykrywanie narożnych pól - dodanie ładnej zmiany kierunku
+            if (pos.z >= 16 && dir == direction.straight)
             {
                 dir = direction.right;
 
@@ -44,7 +53,7 @@ public class PawnMovement : MonoBehaviour
                 v.Set(0, 0, 0);
                 rb.velocity = v;
             }
-            else if (pos.z <= -1 && dir == direction.right)
+            else if (pos.x >= 20 && dir == direction.right)
             {
                 dir = direction.backwards;
 
@@ -52,7 +61,7 @@ public class PawnMovement : MonoBehaviour
                 v.Set(0, 0, 0);
                 rb.velocity = v;
             }
-            else if (pos.x <= 0 && dir == direction.backwards)
+            else if (pos.z <= -5 && dir == direction.backwards)
             {
                 dir = direction.left;
 
@@ -60,7 +69,7 @@ public class PawnMovement : MonoBehaviour
                 v.Set(0, 0, 0);
                 rb.velocity = v;
             }
-            else if (pos.z >= 9 && dir == direction.left)
+            else if (pos.x <= -3 && dir == direction.left)
             {
                 dir = direction.straight;
 
@@ -73,25 +82,25 @@ public class PawnMovement : MonoBehaviour
             if (dir == direction.right)
             {
                 Vector3 v = new Vector3();
-                v.Set(0, 0, -velocity * Time.deltaTime);
+                v.Set(velocity * Time.deltaTime, 0, 0);
                 rb.velocity = v;
             }
             else if (dir == direction.straight)
             {
                 Vector3 v = new Vector3();
-                v.Set(velocity * Time.deltaTime, 0, 0);
+                v.Set(0, 0, velocity * Time.deltaTime);
                 rb.velocity = v;
             }
             else if (dir == direction.left)
             {
                 Vector3 v = new Vector3();
-                v.Set(0, 0, velocity * Time.deltaTime);
+                v.Set( - velocity * Time.deltaTime, 0, 0);
                 rb.velocity = v;
             }
             else if (dir == direction.backwards)
             {
                 Vector3 v = new Vector3();
-                v.Set(-velocity * Time.deltaTime, 0, 0);
+                v.Set(0, 0, - velocity * Time.deltaTime);
                 rb.velocity = v;
             }
         }
@@ -103,17 +112,26 @@ public class PawnMovement : MonoBehaviour
         }
     }
 
-    bool move()
+    bool Move()
     {
-        if (diceRolled)
+        if(destinationReached)
         {
-
-            //TODO: liczyć ile pól pionek przebył
-            if (fieldsMoved < diceOutput)
-                return true;
+            canMove = false;
+            return false;
         }
-
-        fieldsMoved = 0;
+        else if (canMove)
+        {
+            return true;
+        }
         return false;
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.tag=="xd") // TODO: należy zmienić na coś innego niż tagi - ale kolizje wykrywa
+        {
+            destinationReached = true;
+            // TODO: dorobić ładne ustawienie na polu
+        }
     }
 }
