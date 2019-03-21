@@ -35,6 +35,7 @@ public class PawnMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        destinationReached = false;
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class PawnMovement : MonoBehaviour
         {
             Vector3 pos = transform.position;
 
-            //TODO: zamienić to na wykrywanie narożnych pól - dodanie ładnej zmiany kierunku
+            //TODO: zamienić to na wykrywanie narożnych pól + dodanie ładnej zmiany kierunku
             if (pos.z >= 16 && dir == direction.straight)
             {
                 dir = direction.right;
