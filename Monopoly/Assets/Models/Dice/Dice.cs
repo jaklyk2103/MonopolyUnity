@@ -51,7 +51,8 @@ public class Dice : MonoBehaviour
     {
         wasThrown = true;
         rigidBody.useGravity = true;
-        rigidBody.AddTorque(300, 100, 200);
+        //rigidBody.AddTorque(300, 100, 200);
+        rigidBody.AddTorque(Random.Range(200, 400), Random.Range(0, 200), Random.Range(100, 300));
         canRoll = false;
     }
     // Update is called once per frame
