@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    CameraMovement camera;
     List<Player> players;
     int numberOfTurns;
     int numberOfPlayers;
     int currentPlayer;
+    bool start;
+    float timeLeft;
 
     public void SetNumberOfPlayers(int number)
     {
@@ -53,26 +56,53 @@ public class Game : MonoBehaviour
     {
         numberOfTurns = 1;
         players = new List<Player>();
-        SetNumberOfPlayers(2);
+        camera = (CameraMovement)GameObject.Find("Main Camera").GetComponent(typeof(CameraMovement));
         currentPlayer = 0;
+        start = false;
+        timeLeft = 8.0f;
+        SetNumberOfPlayers(2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!players[currentPlayer].IsMoving())
+        if (!start)
         {
-            players[currentPlayer].AllowRolling();
+            camera.SetCircumnavigation();
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+                start = true;
         }
-
-        if(players[currentPlayer].PawnMoved())
+        else
         {
-            //TODO: reszta tury
-            currentPlayer++;
-            if(currentPlayer == numberOfPlayers)
+            if (!players[currentPlayer].IsMoving())
             {
-                currentPlayer = 0;
-                numberOfTurns++;
+                players[currentPlayer].AllowRolling();
+                camera.SetDiceCamera();
+                timeLeft = 1.0f;
+            }
+
+            if (players[currentPlayer].DiceRolled())
+            {
+                timeLeft -= Time.deltaTime;
+                if (timeLeft < 0)
+                {
+                    players[currentPlayer].AllowMovement();
+                    camera.SetPawnFollowing(players[currentPlayer].transform.position);
+                }
+                else
+                    camera.SetPawnCamera(players[currentPlayer].transform.position);
+            }
+
+            if (players[currentPlayer].PawnMoved())
+            {
+                //TODO: reszta tury
+                currentPlayer++;
+                if (currentPlayer == numberOfPlayers)
+                {
+                    currentPlayer = 0;
+                    numberOfTurns++;
+                }
             }
         }
     }

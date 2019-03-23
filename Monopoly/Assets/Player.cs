@@ -7,9 +7,15 @@ public class Player : MonoBehaviour
     public PawnMovement pawn;
     public Dice dice;
     bool moving;
+    bool diceRolled;
     int cash;
     //TODO: obecna pozycja
     //TODO: lista posiadanych pól
+
+    public void AllowMovement()
+    {
+        pawn.allowMovement();
+    }
 
     public bool IsMoving()
     {
@@ -22,10 +28,18 @@ public class Player : MonoBehaviour
         moving = true;
     }
 
+    public bool DiceRolled()
+    {
+        return diceRolled;
+    }
+
     public bool PawnMoved()
     {
         if (pawn.DestinationReached())
+        {
             moving = false;
+            diceRolled = false;
+        }
         return pawn.DestinationReached();
     }
 
@@ -39,6 +53,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         moving = false;
+        diceRolled = false;
         cash = 10000;
     }
 
@@ -48,7 +63,7 @@ public class Player : MonoBehaviour
         if(dice.Rolled() && moving)
         {
             dice.GetRolledValue();
-            pawn.allowMovement();
+            diceRolled= true;
         }
     }
 }
