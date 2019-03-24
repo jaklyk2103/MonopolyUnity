@@ -6,6 +6,7 @@ public class Game : MonoBehaviour
 {
     CameraMovement camera;
     List<Player> players;
+    public List<Property> properties;
     int numberOfTurns;
     int numberOfPlayers;
     int currentPlayer;
@@ -96,6 +97,25 @@ public class Game : MonoBehaviour
 
             if (players[currentPlayer].PawnMoved())
             {
+                int currentPlayerPosition = players[currentPlayer].GetCurrentPosition();
+                int currentPlayerId = players[currentPlayer].GetId();
+                Property currentPlayerStandingProperty = properties[currentPlayerPosition];
+
+                if (currentPlayerStandingProperty.HasOwner())
+                {
+                    HandleRentPay(currentPlayerStandingProperty, currentPlayerId);
+                }
+                else
+                {
+                    if (currentPlayerStandingPropert.IsOwningBy(currentPlayerId))
+                    {
+                        HandleStandingOnOwnPosition();
+                    }
+                    else
+                    {
+                        HandleAbleToBuyProperty(currentPlayerStandingProperty, currentPlayerId);
+                    }
+                }
                 //TODO: reszta tury
                 currentPlayer++;
                 if (currentPlayer == numberOfPlayers)
@@ -105,5 +125,17 @@ public class Game : MonoBehaviour
                 }
             }
         }
+    }
+    void HandleRentPay(Property property, int payingPlayerId)
+    {
+        //TODO
+    }
+    void HandleStandingOnOwnPosition()
+    {
+        //JUST SHOW POPUP INFO?
+    }
+    HandleAbleToBuyProperty(Property property, int playerId)
+    {
+        //TODO: decision making menu + calls to game logic based on player decision        
     }
 }

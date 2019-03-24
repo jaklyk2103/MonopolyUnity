@@ -4,8 +4,10 @@ using System;
 
 public class Property : MonoBehaviour
 {
+    int Id { get; set; }
+    String Name { get; set; }
     public int CountryId { get; set; }
-    public int? OwnerId { get; set; }
+    int? OwnerId { get; set; }
     public int NumberOfHouses
     { get; set; }
     public int Price;
@@ -31,6 +33,17 @@ public class Property : MonoBehaviour
         {
             OwnerId = ownerId;
         }
+    }
+    public bool HasOwner()
+    {
+        if (OwnerId == null) return false;
+        else return true;
+    }
+    public bool IsOwningBy(int PlayerId)
+    {
+        if (PlayerId == OwnerId) return true;
+        else return false;
+        
     }
     void BuildHouse()
     {
