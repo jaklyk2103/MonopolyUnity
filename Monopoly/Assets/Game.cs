@@ -103,18 +103,18 @@ public class Game : MonoBehaviour
 
                 if (currentPlayerStandingProperty.HasOwner())
                 {
-                    HandleRentPay(currentPlayerStandingProperty, currentPlayerId);
-                }
-                else
-                {
                     if (currentPlayerStandingPropert.IsOwningBy(currentPlayerId))
                     {
                         HandleStandingOnOwnPosition();
                     }
                     else
                     {
-                        HandleAbleToBuyProperty(currentPlayerStandingProperty, currentPlayerId);
+                        HandleRentPay(currentPlayerStandingProperty, currentPlayerId);
                     }
+                }
+                else
+                {
+                  HandleAbleToBuyProperty(currentPlayerStandingProperty, currentPlayerId);
                 }
                 //TODO: reszta tury
                 currentPlayer++;
@@ -134,7 +134,7 @@ public class Game : MonoBehaviour
     {
         //JUST SHOW POPUP INFO?
     }
-    HandleAbleToBuyProperty(Property property, int playerId)
+    void HandleAbleToBuyProperty(Property property, int playerId)
     {
         //TODO: decision making menu + calls to game logic based on player decision        
     }
