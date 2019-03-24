@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class Dice : MonoBehaviour
 {
+    public DiceSide [] diceSides;
     Rigidbody rigidBody;
     bool hasLanded;
     bool wasThrown;
     bool valueRead;
     Vector3 initialPosition;
     int rollValue;
-    public DiceSide [] diceSides ;
+    bool canRoll;
+
+    public int GetRolledValue()
+    {
+        valueRead = false;
+        return rollValue;
+    }
+
+    public void EnableRolling()
+    {
+        canRoll = true;
+    }
+
+    public bool Rolled()
+    {
+        return valueRead;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,23 +37,23 @@ public class Dice : MonoBehaviour
         rigidBody.useGravity = false;
         hasLanded = false;
         wasThrown = false;
+        canRoll = false;
+        valueRead = false;
         
     }
      void OnMouseDown()
     {
-        if (!wasThrown && !hasLanded) Roll();
+        if (!wasThrown && !hasLanded && canRoll) Roll();
         else Reset();
     }
 
     void Roll()
     {
-        
-            wasThrown = true;
-            rigidBody.useGravity = true;
-            rigidBody.AddTorque(300, 100, 200);
-        
-        
-
+        wasThrown = true;
+        rigidBody.useGravity = true;
+        //rigidBody.AddTorque(300, 100, 200);
+        rigidBody.AddTorque(Random.Range(200, 400), Random.Range(0, 200), Random.Range(100, 300));
+        canRoll = false;
     }
     // Update is called once per frame
     void Update()
@@ -63,7 +80,6 @@ public class Dice : MonoBehaviour
         transform.position = initialPosition;
         wasThrown = false;
         hasLanded = false;
-        valueRead = false;
         rigidBody.useGravity = false;
         rigidBody.isKinematic = false;
     }
