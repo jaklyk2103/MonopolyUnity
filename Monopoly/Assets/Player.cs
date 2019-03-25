@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     bool moving;
     bool diceRolled;
     int cash;
+    int currentFieldId;
     //TODO: obecna pozycja
     //TODO: lista posiadanych pól
 
@@ -31,6 +32,15 @@ public class Player : MonoBehaviour
     public bool DiceRolled()
     {
         return diceRolled;
+    }
+    public int GetCurrentPosition()
+    {
+        return currentFieldId;
+    }
+    public int GetId()
+    {
+        //Just for now, to overload in specific player class 
+        return 0;
     }
 
     public bool PawnMoved()
