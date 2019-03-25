@@ -103,7 +103,7 @@ public class Game : MonoBehaviour
 
                 if (currentPlayerStandingProperty.HasOwner())
                 {
-                    if (currentPlayerStandingPropert.IsOwningBy(currentPlayerId))
+                    if (currentPlayerStandingProperty.IsOwningBy(currentPlayerId))
                     {
                         HandleStandingOnOwnPosition();
                     }
