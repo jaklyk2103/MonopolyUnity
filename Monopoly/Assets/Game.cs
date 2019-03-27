@@ -6,6 +6,7 @@ public class Game : MonoBehaviour
 {
     CameraMovement camera;
     List<Player> players;
+    DialogMenu dialogMenu;
     public List<Property> properties;
     int numberOfTurns;
     int numberOfPlayers;
@@ -62,6 +63,8 @@ public class Game : MonoBehaviour
         start = false;
         timeLeft = 8.0f;
         SetNumberOfPlayers(2);
+        dialogMenu = DialogMenu.Instance();
+        dialogMenu.Show(100, 50);
     }
 
     // Update is called once per frame
