@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    
     CameraMovement camera;
     List<Player> players;
     DialogMenu dialogMenu;
@@ -13,6 +14,7 @@ public class Game : MonoBehaviour
     int currentPlayer;
     bool start;
     float timeLeft;
+    const int gameBoardSize = 42;
 
     public void SetNumberOfPlayers(int number)
     {
@@ -53,18 +55,28 @@ public class Game : MonoBehaviour
         }
     }
 
+    void propertiesInit()
+    {
+        for(int i = 0; i < gameBoardSize; i++)
+        {
+            properties.Add((Property)GameObject.Find("Tile" + i).GetComponent(typeof(Property)));
+            properties[i].SetId(i);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         numberOfTurns = 1;
         players = new List<Player>();
+        propertiesInit();
         camera = (CameraMovement)GameObject.Find("Main Camera").GetComponent(typeof(CameraMovement));
         currentPlayer = 0;
         start = false;
         timeLeft = 8.0f;
         SetNumberOfPlayers(2);
         dialogMenu = DialogMenu.Instance();
-        dialogMenu.Show(100, 50);
+      
     }
 
     // Update is called once per frame
@@ -93,6 +105,7 @@ public class Game : MonoBehaviour
                 {
                     players[currentPlayer].AllowMovement();
                     camera.SetPawnFollowing(players[currentPlayer].transform.position);
+                    dialogMenu.ShowAbleToBuy(properties[0]);
                 }
                 else
                     camera.SetPawnCamera(players[currentPlayer].transform.position);
@@ -103,6 +116,7 @@ public class Game : MonoBehaviour
                 int currentPlayerPosition = players[currentPlayer].GetCurrentPosition();
                 int currentPlayerId = players[currentPlayer].GetId();
                 Property currentPlayerStandingProperty = properties[currentPlayerPosition];
+                
 
                 if (currentPlayerStandingProperty.HasOwner())
                 {

@@ -4,19 +4,19 @@ using System;
 
 public class Property : MonoBehaviour
 {
-    int Id { get; set; }
-    String Name { get; set; }
-    public int CountryId { get; set; }
-    int? OwnerId { get; set; }
-    public int NumberOfHouses
+    int id { get; set; }
+    String name { get; set; }
+    public int countryId { get; set; }
+    int? ownerId { get; set; }
+    public int numberOfHouses
     { get; set; }
-    public int Price;
-    public int HousePrice;
-    public int HotelPrice;
-    public int Rent;
-    public int RentPerHouse;
-    bool HotelBuilt;
-    public int HotelRent;
+    public int price;
+    public int housePrice;
+    public int hotelPrice;
+    public int rent;
+    public int rentPerHouse;
+    bool hotelBuilt;
+    public int hotelRent;
     public GameObject housePrefab;
     GameObject[] houses;
 
@@ -26,50 +26,55 @@ public class Property : MonoBehaviour
 
         Debug.Log("jestem");
     }
+
+    public void SetId(int id)
+    {
+        this.id = id; 
+    }
     
     void BuyProperty(int ownerId)
     {
-        if (OwnerId==null)
+        if (this.ownerId==null)
         {
-            OwnerId = ownerId;
+            this.ownerId = ownerId;
         }
     }
     public bool HasOwner()
     {
-        if (OwnerId == null) return false;
+        if (ownerId == null) return false;
         else return true;
     }
     public bool IsOwningBy(int PlayerId)
     {
-        if (PlayerId == OwnerId) return true;
+        if (PlayerId == ownerId) return true;
         else return false;
         
     }
     void BuildHouse()
     {
-        if(NumberOfHouses < 4)
+        if(numberOfHouses < 4)
         {
             var position = transform.position;
-            houses[NumberOfHouses]=Instantiate(housePrefab,position, Quaternion.identity);
-            NumberOfHouses++;
+            houses[numberOfHouses]=Instantiate(housePrefab,position, Quaternion.identity);
+            numberOfHouses++;
         }
     }
     void BuildHotel()
     {
-        if (NumberOfHouses == 4)
+        if (numberOfHouses == 4)
         {
-            HotelBuilt = true;
+            hotelBuilt = true;
         }
     }
     int GetRent()
     {
-        if (HotelBuilt)
+        if (hotelBuilt)
         {
-            return Rent + HotelRent;
+            return rent + hotelRent;
         }
         else
         {
-            return Rent + NumberOfHouses * RentPerHouse;
+            return rent + numberOfHouses * rentPerHouse;
         }
     }
 }
