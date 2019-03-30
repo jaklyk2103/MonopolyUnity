@@ -24,8 +24,8 @@ public class Game : MonoBehaviour
 
         if (number == 2)
         {
-            players.Add((Player)GameObject.Find("Teapot").GetComponent(typeof(Player)));
             players.Add((Player)GameObject.Find("Cat").GetComponent(typeof(Player)));
+            players.Add((Player)GameObject.Find("Teapot").GetComponent(typeof(Player)));
 
             Player p = (Player)GameObject.Find("Dog").GetComponent(typeof(Player));
             p.Disable();
@@ -69,9 +69,9 @@ public class Game : MonoBehaviour
     {
         if (!start)
         {
-            camera.SetCircumnavigation();
-            timeLeft -= Time.deltaTime;
-            if (timeLeft < 0)
+            //camera.SetCircumnavigation();
+            //timeLeft -= Time.deltaTime;
+            //if (timeLeft < 0)
                 start = true;
         }
         else
@@ -97,7 +97,7 @@ public class Game : MonoBehaviour
 
             if (players[currentPlayer].PawnMoved())
             {
-                int currentPlayerPosition = players[currentPlayer].GetCurrentPosition();
+                /*int currentPlayerPosition = players[currentPlayer].GetCurrentPosition();
                 int currentPlayerId = players[currentPlayer].GetId();
                 Property currentPlayerStandingProperty = properties[currentPlayerPosition];
 
@@ -115,8 +115,8 @@ public class Game : MonoBehaviour
                 else
                 {
                   HandleAbleToBuyProperty(currentPlayerStandingProperty, currentPlayerId);
-                }
-                //TODO: reszta tury
+                }*/
+
                 currentPlayer++;
                 if (currentPlayer == numberOfPlayers)
                 {
