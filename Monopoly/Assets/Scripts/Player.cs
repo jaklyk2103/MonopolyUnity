@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public void MoveToPosition(int index) //przesunięcie na wybraną pozycję
     {
         currentFieldId = index;
-        if (!pawn.DestinationReached())
+        if (!pawn.IsDestinationReached())
             pawn.AllowMovement(index);
     }
 
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         int destinationFieldId = currentFieldId + dice.GetRolledValue();
         if (destinationFieldId > 42)
             destinationFieldId = destinationFieldId - 43;
-        if(!pawn.DestinationReached())
+        if(!pawn.IsDestinationReached())
             pawn.AllowMovement(destinationFieldId);
     }
 
@@ -56,13 +56,13 @@ public class Player : MonoBehaviour
 
     public bool PawnMoved()
     {
-        if (pawn.DestinationReached())
+        if (pawn.IsDestinationReached())
         {
             moving = false;
             diceRolled = false;
             currentFieldId = currentFieldId + dice.GetRolledValue();
         }
-        return pawn.DestinationReached();
+        return pawn.IsDestinationReached();
     }
 
     public void Disable()

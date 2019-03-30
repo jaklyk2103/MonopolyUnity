@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum direction
+enum Direction
 {
     straight,
     left,
@@ -31,7 +31,7 @@ public class PawnMovement : MonoBehaviour
     Vector3 fieldPosition;
     float targetRotation;
     float velocity = 300f;
-    direction dir = direction.straight;
+    Direction direction = Direction.straight;
     float trackBonus;
     bool directionChanged;
 
@@ -43,7 +43,7 @@ public class PawnMovement : MonoBehaviour
         moveToCenter = false;
     }
 
-    public bool DestinationReached()
+    public bool IsDestinationReached()
     {
         return destinationReached;
     }
@@ -89,41 +89,41 @@ public class PawnMovement : MonoBehaviour
             Vector3 dest;
             if (!directionChanged)
             {
-                switch (dir)
+                switch (direction)
                 {
-                    case direction.straight:
+                    case Direction.straight:
                         dest = transform.position;
                         dest.z = fieldPosition.z + trackBonus;
                         if (transform.position.z >= dest.z)
                         {
-                            dir = direction.right;
+                            direction = Direction.right;
                             directionChanged = true;
                         }
                         break;
-                    case direction.backwards:
+                    case Direction.backwards:
                         dest = transform.position;
                         dest.z = fieldPosition.z - trackBonus;
                         if (transform.position.z <= dest.z)
                         {
-                            dir = direction.left;
+                            direction = Direction.left;
                             directionChanged = true;
                         }
                         break;
-                    case direction.right:
+                    case Direction.right:
                         dest = transform.position;
                         dest.x = fieldPosition.x + trackBonus;
                         if (transform.position.x >= dest.x)
                         {
-                            dir = direction.backwards;
+                            direction = Direction.backwards;
                             directionChanged = true;
                         }
                         break;
-                    case direction.left:
+                    case Direction.left:
                         dest = transform.position;
                         dest.x = fieldPosition.x - trackBonus;
                         if (transform.position.x <= dest.x)
                         {
-                            dir = direction.straight;
+                            direction = Direction.straight;
                             directionChanged = true;
                         }
                         break;
@@ -132,28 +132,28 @@ public class PawnMovement : MonoBehaviour
         }
         if (moveToCenter)
         {
-            Vector3 dest;
-            switch (dir)
+            Vector3 destination;
+            switch (direction)
             {
-                case direction.straight:
-                    dest = transform.position;
-                    dest.z = fieldPosition.z + trackBonus;
-                    transform.position = Vector3.Lerp(transform.position, dest, Time.deltaTime * 2);
+                case Direction.straight:
+                    destination = transform.position;
+                    destination.z = fieldPosition.z + trackBonus;
+                    transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime * 2);
                     break;
-                case direction.backwards:
-                    dest = transform.position;
-                    dest.z = fieldPosition.z - trackBonus;
-                    transform.position = Vector3.Lerp(transform.position, dest, Time.deltaTime * 2);
+                case Direction.backwards:
+                    destination = transform.position;
+                    destination.z = fieldPosition.z - trackBonus;
+                    transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime * 2);
                     break;
-                case direction.right:
-                    dest = transform.position;
-                    dest.x = fieldPosition.x + trackBonus;
-                    transform.position = Vector3.Lerp(transform.position, dest, Time.deltaTime * 2);
+                case Direction.right:
+                    destination = transform.position;
+                    destination.x = fieldPosition.x + trackBonus;
+                    transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime * 2);
                     break;
-                case direction.left:
-                    dest = transform.position;
-                    dest.x = fieldPosition.x - trackBonus;
-                    transform.position = Vector3.Lerp(transform.position, dest, Time.deltaTime * 2);
+                case Direction.left:
+                    destination = transform.position;
+                    destination.x = fieldPosition.x - trackBonus;
+                    transform.position = Vector3.Lerp(transform.position, destination, Time.deltaTime * 2);
                     break;
             }
 
@@ -168,25 +168,25 @@ public class PawnMovement : MonoBehaviour
 
             Vector3 pos = transform.position;
             
-                if (dir == direction.right)
+                if (direction == Direction.right)
                 {
                     Vector3 v = new Vector3();
                     v.Set(velocity * Time.deltaTime, 0, 0);
                     rb.velocity = v;
                 }
-                else if (dir == direction.straight)
+                else if (direction == Direction.straight)
                 {
                     Vector3 v = new Vector3();
                     v.Set(0, 0, velocity * Time.deltaTime);
                     rb.velocity = v;
                 }
-                else if (dir == direction.left)
+                else if (direction == Direction.left)
                 {
                     Vector3 v = new Vector3();
                     v.Set(-velocity * Time.deltaTime, 0, 0);
                     rb.velocity = v;
                 }
-                else if (dir == direction.backwards)
+                else if (direction == Direction.backwards)
                 {
                     Vector3 v = new Vector3();
                     v.Set(0, 0, -velocity * Time.deltaTime);
