@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
     public List<Property> properties;
     int numberOfTurns;
     int numberOfPlayers;
-    int currentPlayer;
+    int currentPlayerIndex;
     bool start;
     float timeLeft;
 
@@ -24,8 +24,8 @@ public class Game : MonoBehaviour
 
         if (number == 2)
         {
-            players.Add((Player)GameObject.Find("Teapot").GetComponent(typeof(Player)));
             players.Add((Player)GameObject.Find("Cat").GetComponent(typeof(Player)));
+            players.Add((Player)GameObject.Find("Teapot").GetComponent(typeof(Player)));
 
             Player p = (Player)GameObject.Find("Dog").GetComponent(typeof(Player));
             p.Disable();
@@ -58,7 +58,7 @@ public class Game : MonoBehaviour
         numberOfTurns = 1;
         players = new List<Player>();
         camera = (CameraMovement)GameObject.Find("Main Camera").GetComponent(typeof(CameraMovement));
-        currentPlayer = 0;
+        currentPlayerIndex = 0;
         start = false;
         timeLeft = 8.0f;
         SetNumberOfPlayers(2);
@@ -69,35 +69,35 @@ public class Game : MonoBehaviour
     {
         if (!start)
         {
-            camera.SetCircumnavigation();
-            timeLeft -= Time.deltaTime;
-            if (timeLeft < 0)
+            //camera.SetCircumnavigation();
+            //timeLeft -= Time.deltaTime;
+            //if (timeLeft < 0)
                 start = true;
         }
         else
         {
-            if (!players[currentPlayer].IsMoving())
+            if (!players[currentPlayerIndex].IsMoving())
             {
-                players[currentPlayer].AllowRolling();
+                players[currentPlayerIndex].AllowRolling();
                 camera.SetDiceCamera();
                 timeLeft = 1.0f;
             }
 
-            if (players[currentPlayer].DiceRolled())
+            if (players[currentPlayerIndex].DiceRolled())
             {
                 timeLeft -= Time.deltaTime;
                 if (timeLeft < 0)
                 {
-                    players[currentPlayer].AllowMovement();
-                    camera.SetPawnFollowing(players[currentPlayer].transform.position);
+                    players[currentPlayerIndex].AllowMovement();
+                    camera.SetPawnFollowing(players[currentPlayerIndex].transform.position);
                 }
                 else
-                    camera.SetPawnCamera(players[currentPlayer].transform.position);
+                    camera.SetPawnCamera(players[currentPlayerIndex].transform.position);
             }
 
-            if (players[currentPlayer].PawnMoved())
+            if (players[currentPlayerIndex].PawnMoved())
             {
-                int currentPlayerPosition = players[currentPlayer].GetCurrentPosition();
+                /*int currentPlayerPosition = players[currentPlayer].GetCurrentPosition();
                 int currentPlayerId = players[currentPlayer].GetId();
                 Property currentPlayerStandingProperty = properties[currentPlayerPosition];
 
@@ -115,12 +115,12 @@ public class Game : MonoBehaviour
                 else
                 {
                   HandleAbleToBuyProperty(currentPlayerStandingProperty, currentPlayerId);
-                }
-                //TODO: reszta tury
-                currentPlayer++;
-                if (currentPlayer == numberOfPlayers)
+                }*/
+
+                currentPlayerIndex++;
+                if (currentPlayerIndex == numberOfPlayers)
                 {
-                    currentPlayer = 0;
+                    currentPlayerIndex = 0;
                     numberOfTurns++;
                 }
             }

@@ -4,7 +4,7 @@ using System;
 
 public class Property : MonoBehaviour
 {
-    int Id { get; set; }
+    public int Id;
     String Name { get; set; }
     public int CountryId { get; set; }
     int? OwnerId { get; set; }
