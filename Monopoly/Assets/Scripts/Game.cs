@@ -120,6 +120,8 @@ public class Game : MonoBehaviour
                 currentPlayerIndex++;
                 if (currentPlayerIndex == numberOfPlayers)
                 {
+                    Debug.Log(currentPlayerIndex);
+
                     currentPlayerIndex = 0;
                     numberOfTurns++;
                 }
