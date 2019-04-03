@@ -105,7 +105,8 @@ public class Game : MonoBehaviour
                 {
                     players[currentPlayer].AllowMovement();
                     camera.SetPawnFollowing(players[currentPlayer].transform.position);
-                    dialogMenu.ShowAbleToBuy(properties[0]);
+                    //MENU TEST
+                   // dialogMenu.ShowAbleToBuy(properties[0]);
                 }
                 else
                     camera.SetPawnCamera(players[currentPlayer].transform.position);
