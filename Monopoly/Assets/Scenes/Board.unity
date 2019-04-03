@@ -3011,13 +3011,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ce810bd45d6fc784996fa3d0c29f6bc5, type: 2}
-<<<<<<< HEAD
-=======
     - target: {fileID: 2399452, guid: dadabfb7666c71040b774315c71951ea, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ce810bd45d6fc784996fa3d0c29f6bc5, type: 2}
->>>>>>> fieldClass
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dadabfb7666c71040b774315c71951ea, type: 3}
 --- !u!1001 &723414406
@@ -3030,11 +3027,7 @@ PrefabInstance:
     - target: {fileID: 7101247496055823439, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
-      value: Tile (38)
-=======
       value: Tile17
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     - target: {fileID: 441310253902735158, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
@@ -3074,11 +3067,7 @@ PrefabInstance:
     - target: {fileID: 441310253902735158, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 35
-=======
-      value: 17
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     - target: {fileID: 441310253902735158, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
@@ -3766,17 +3755,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 8120569743082065346, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
-        type: 3}
-      propertyPath: Id
-      value: 5
-=======
     - target: {fileID: 8070530001498823277, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
       propertyPath: m_TagString
       value: xd
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaa9ba072c40bc479f00bff6f61fcc1, type: 3}
@@ -5948,13 +5930,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464282343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -4.05, y: 0.48, z: -4.54}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-=======
   m_LocalPosition: {x: 0.04, y: 1.08, z: 10.53}
   m_LocalScale: {x: 3, y: 3, z: 3}
->>>>>>> fieldClass
   m_Children:
   - {fileID: 737457703}
   m_Father: {fileID: 0}
@@ -6505,11 +6482,7 @@ Transform:
   - {fileID: 2088449929}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-<<<<<<< HEAD
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
   m_LocalEulerAnglesHint: {x: 0, y: -40, z: 0}
->>>>>>> fieldClass
 --- !u!54 &1538068192
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7345,11 +7318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0b8545bc148414dbf8f30bcd357a2c, type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-      value: -1.43
-=======
       value: -2.1
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0b8545bc148414dbf8f30bcd357a2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7357,11 +7326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0b8545bc148414dbf8f30bcd357a2c, type: 3}
       propertyPath: m_LocalPosition.z
-<<<<<<< HEAD
-      value: -4.56
-=======
       value: -6.43
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0b8545bc148414dbf8f30bcd357a2c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8217,8 +8182,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaa9ba072c40bc479f00bff6f61fcc1, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1001 &2015263106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8328,7 +8291,6 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> fieldClass
 --- !u!4 &2076940605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 441310253902735158, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
@@ -8482,17 +8444,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 8120569743082065346, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
-        type: 3}
-      propertyPath: Id
-      value: 1
-=======
     - target: {fileID: 1753582909658680310, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaa9ba072c40bc479f00bff6f61fcc1, type: 3}
@@ -9047,15 +9002,6 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8120569743082065346, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
         type: 3}
-<<<<<<< HEAD
-      propertyPath: Id
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070530001498823277, guid: 1eaa9ba072c40bc479f00bff6f61fcc1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-=======
       propertyPath: Price
       value: 100
       objectReference: {fileID: 0}
@@ -9113,7 +9059,6 @@ PrefabInstance:
         type: 3}
       propertyPath: hotelRent
       value: 80
->>>>>>> fieldClass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eaa9ba072c40bc479f00bff6f61fcc1, type: 3}

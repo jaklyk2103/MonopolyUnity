@@ -218,20 +218,20 @@ public class PawnMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (canMove && (col.GetComponentInParent<Property>().Id == 1 || col.GetComponentInParent<Property>().Id == 10 || col.GetComponentInParent<Property>().Id == 13 || col.GetComponentInParent<Property>().Id == 15)) //należy zmienić na poprawne później
+        if (canMove && (col.GetComponentInParent<Property>().id == 1 || col.GetComponentInParent<Property>().id == 10 || col.GetComponentInParent<Property>().id == 13 || col.GetComponentInParent<Property>().id == 15)) //należy zmienić na poprawne później
         {
             rotate = false;
             directionChanged = false;
         }
 
-        if (canMove && (col.GetComponentInParent<Property>().Id == 100 || col.GetComponentInParent<Property>().Id == 9 || col.GetComponentInParent<Property>().Id == 12 || col.GetComponentInParent<Property>().Id == 14)) //należy zmienić na poprawne później
+        if (canMove && (col.GetComponentInParent<Property>().id == 100 || col.GetComponentInParent<Property>().id == 9 || col.GetComponentInParent<Property>().id == 12 || col.GetComponentInParent<Property>().id == 14)) //należy zmienić na poprawne później
         {
             rotate = true;
             targetRotation += 90f;
             fieldPosition = col.GetComponentInParent<Property>().transform.position;
         }
 
-        if ( canMove && col.GetComponentInParent<Property>().Id == destinationFieldId )
+        if ( canMove && col.GetComponentInParent<Property>().id == destinationFieldId )
         {
             fieldPosition = col.GetComponentInParent<Property>().transform.position;
             destinationReached = true;

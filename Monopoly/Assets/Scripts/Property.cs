@@ -4,11 +4,11 @@ using System;
 
 public class Property : MonoBehaviour
 {
-    public int Id;
+    public int id;
     String Name { get; set; }
     public int CountryId { get; set; }
-    int? OwnerId { get; set; }
-    public int NumberOfHouses
+    int? ownerId { get; set; }
+    public int numberOfHouses
     { get; set; }
     public int price;
     public int housePrice;
