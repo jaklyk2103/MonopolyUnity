@@ -103,8 +103,15 @@ public class Game : MonoBehaviour
                 timeLeft -= Time.deltaTime;
                 if (timeLeft < 0)
                 {
+<<<<<<< HEAD:Monopoly/Assets/Scripts/Game.cs
                     players[currentPlayerIndex].AllowMovement();
                     camera.SetPawnFollowing(players[currentPlayerIndex].transform.position);
+=======
+                    players[currentPlayer].AllowMovement();
+                    camera.SetPawnFollowing(players[currentPlayer].transform.position);
+                    //MENU TEST
+                   // dialogMenu.ShowAbleToBuy(properties[0]);
+>>>>>>> fieldClass:Monopoly/Assets/Game.cs
                 }
                 else
                     camera.SetPawnCamera(players[currentPlayerIndex].transform.position);
